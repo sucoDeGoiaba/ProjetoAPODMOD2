@@ -25,27 +25,35 @@ $('#btnFazerRequest').click(function(){
             const imagem = $('#imagem');
             const tituloTexto = $('#nomeDoCorpoCeleste');
             const texto = $('#textoDescricao');
+            const body = $('body')
+
             if(imagem.css('display') === 'none'){
                 // Adicionando imagem
                 imagem.attr('src', request.hdurl);
                 imagem.attr('alt', request.title); 
                 imagem.css('display', 'block');
 
+                // Adicionando background
+                body.css('background-image', `url(${request.hdurl})`);
                 // Adicionando texto
                 tituloTexto.text(request.title)
                 texto.text(request.explanation)
             } else {
-                // Adicionando imagem
+                // Editando imagem
                 imagem.attr('src', request.hdurl);
                 imagem.attr('alt', request.title); 
 
-                // Adicionando texto
+                // Editando background
+                body.css('background-image', `url(${request.hdurl})`);
+
+                // Editando texto
                 tituloTexto.text(request.title)
                 texto.text(request.explanation)
             }
         },
         error : function(error){
             console.log(error);
+            
         }
     })
 })
