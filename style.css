@@ -58,8 +58,16 @@ body {
     background-color: #e3e3e3;
     border-radius: 50px;
     font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
 }
 
+#data:hover {
+    padding: 6px;
+}
+
+#data:active {
+    background-color: #ffffff;
+}
 #btnFazerRequest {
     padding: 5px 10px;
     border: none;
@@ -67,7 +75,20 @@ body {
     background: #130e14;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
 }
+
+#btnFazerRequest:hover {
+    background-color: #ffffff;
+    color: #130e14;
+    border: 1px solid #130e14;
+    padding: 6px 12px;
+}
+
+#btnFazerRequest:active {
+    padding: 5px 6px;
+}
+
 
 #msgErro {
     display: none;
