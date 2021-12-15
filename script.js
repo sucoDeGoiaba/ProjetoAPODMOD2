@@ -1,14 +1,3 @@
-// $.ajax({
-//     url : 'https://api.nasa.gov/planetary/apod?api_key=sEkVILIIBUnRbQ0XjWnejiohxH4BwRCFBjSC3N0q',
-//     success: function(response){
-//         console.log(response);
-//     },
-//     erro: function(error){
-//         console.log(error);
-//     }
-// })
-
-
 // Espera evento no botão.
 $('#btnFazerRequest').click(function(){
     // Pega a data passada
@@ -25,7 +14,8 @@ $('#btnFazerRequest').click(function(){
             const imagem = $('#imagem');
             const tituloTexto = $('#nomeDoCorpoCeleste');
             const texto = $('#textoDescricao');
-            const body = $('body')
+            const body = $('body');
+            const msgErro = $('#msgErro');
 
             if(imagem.css('display') === 'none'){
                 // Adicionando imagem
@@ -35,9 +25,15 @@ $('#btnFazerRequest').click(function(){
 
                 // Adicionando background
                 body.css('background-image', `url(${request.hdurl})`);
+
                 // Adicionando texto
                 tituloTexto.text(request.title)
                 texto.text(request.explanation)
+
+                // Tira a msg de erro
+                if(msgErro.css('display') !== 'none'){
+                    msgErro.css('display', 'none');
+                }
             } else {
                 // Editando imagem
                 imagem.attr('src', request.hdurl);
@@ -49,11 +45,21 @@ $('#btnFazerRequest').click(function(){
                 // Editando texto
                 tituloTexto.text(request.title)
                 texto.text(request.explanation)
+                
+                // Tira a msg de erro
+                if(msgErro.css('display') !== 'none'){
+                    msgErro.css('display', 'none');
+                }
             }
         },
         error : function(error){
             console.log(error);
-            
+            // Fazer tratamento de erro - Feito
+            const msgErro = $('#msgErro');
+            // Exibe a msg de erro
+            if(msgErro.css('display') === 'none'){
+                msgErro.css('display', 'block');
+            }
         }
     })
 })

@@ -69,6 +69,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+#msgErro {
+    display: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #d40007;
+    font-size: 14px;
+    padding: 5px;
+}
+
 #containerFormDesc > article {
     margin-top: 10px;
 }
