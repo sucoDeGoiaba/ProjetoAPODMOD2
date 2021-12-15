@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -24,7 +27,7 @@ body {
     height: fit-content;
     padding: 20px;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     background-color: white;
     border-radius: 10px;
 
@@ -38,11 +41,34 @@ body {
 
 #containerFormDesc {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 20px;
 }
 
-#containerFormDesc > form {
+#containerFormDesc > form{
+    display: flex;
+    justify-content: space-evenly;
     
 }
 
+
+#data {
+    padding: 5px;
+    border: none;
+    background-color: #e3e3e3;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#btnFazerRequest {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 50px;
+    background: #130e14;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+#containerFormDesc > article {
+    margin-top: 10px;
+}
